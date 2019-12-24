@@ -1,5 +1,5 @@
 function viewResult() {
-    var htmlObj = $.ajax({"url": url, "async": false,timeout: 5});
+    var htmlObj = $.ajax({"url": url, "async": false, timeout: 5000});
     var resp = JSON.parse(htmlObj.responseText);
     var list = resp.result.list;
     data = [];
