@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>AOFEX_NSO</title>
+    <link rel="stylesheet" href="css/mian.css"/>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="https://www.echartsjs.com/examples/vendors/echarts/echarts.min.js"></script>
+
+</head>
+<body>
+<div id="kLine">
+    <div id="chart"></div>
+    <div id="result"></div>
+</div>
+<div id="show"></div>
+
+<script src="js/main.js"></script>
+<script src="js/ws.js"></script>
+<script src="js/kline.js"></script>
+<script src="js/result.js"></script>
+<script src="js/biz.js"></script>
+
+<script type="text/javascript">
+    createWs();
+    setInterval(function () {
+        try {
+            upgrade();
+        } catch (e) {
+            addMsg(JSON.stringify(e))
+        }
+    }, 10000);
+</script>
+
+
+</body>
+</html>
