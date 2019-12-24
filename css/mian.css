@@ -1,7 +1,12 @@
 
 body {
+    width: 100%;
     background-color: darkgrey;
     min-width: 1200px;
+}
+
+#kLine {
+    witdh: 100%;
 }
 
 #chart {
@@ -11,15 +16,15 @@ body {
     float: left;
 }
 
-#show {
-    float: left;
-}
-
 #result {
     height: 450px;
     margin: 10px;
     float: left;
     display: block;
+}
+
+#show {
+    float: left;
 }
 
 .bar {
