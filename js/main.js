@@ -25,9 +25,14 @@ String.prototype.startWith = function (s) {
         return false;
 };
 
+var audio = new Audio("abc.mp3");
 function play() {
-    var audio = new Audio("abc.mp3");
-    audio.play();
+    try{
+        audio.play();
+    }catch (e){
+        addMsg("播放音乐失败："+ JSON.stringify(e));
+    }
+
 }
 
 function addMsg(msg) {
