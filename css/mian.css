@@ -1,0 +1,56 @@
+
+body {
+    background-color: darkgrey;
+    min-width: 1200px;
+}
+
+#chart {
+    width: 700px;
+    height: 450px;
+    margin: 10px;
+    float: left;
+}
+
+#show {
+    float: left;
+}
+
+#result {
+    height: 450px;
+    margin: 10px;
+    float: left;
+    display: block;
+}
+
+.bar {
+    float: left;
+    width: 25px;
+}
+
+.triangle {
+    width: 0px;
+    height: 0px;
+    border-bottom: 20px solid blue;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin: 2px;
+    float: left;
+}
+
+.raise {
+    border: 10px solid green;
+}
+
+.fall {
+    border: 10px solid red;
+}
+
+.cycle {
+    width: 0px;
+    height: 0px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 20px;
+    margin: 2px;
+    float: left;
+}
