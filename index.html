@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>AOFEX_NSO</title>
+    <link rel="stylesheet" href="css/table.css"/>
+
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="js/db/db.js"></script>
+    <script src="js/db/order.js"></script>
+    <script>
+        function saveOrder() {
+            var timeStr = $("#timeStr").val();
+            ORDER.save(timeStr);
+            ORDER.queryAll(function (result) {
+                $("#content").html(resultAsTable(result));
+            });
+        }
+
+        var audio = new Audio("abc.mp3");
+        function play() {
+            try{
+                audio.play();
+            }catch (e){
+                console.log("播放音乐失败："+ JSON.stringify(e));
+            }
+        }
+
+
+    </script>
+</head>
+<body style="background-color: gray;margin: 45px 20px;">
+时间：<input type="text" id="timeStr">
+<input type="button" value="新增" onclick="saveOrder()">
+<input type="button" value="吹号" onclick="play()">
+<table>
+    <tbody id="content">
+
+    </tbody>
+
+</table>
+
+</body>
+</html>
