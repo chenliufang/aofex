@@ -28,8 +28,11 @@ String.prototype.startWith = function (s) {
 
 function play() {
     try {
-        var audio = document.getElementById("abc");
-        audio.play();
+        var src = $('#abcFrame').attr('src');
+        if(!src){
+            src = "abc.mp3";
+        }
+        $('#abcFrame').attr('src',src );
     } catch (e) {
         addMsg("播放音乐失败：" + JSON.stringify(e));
     }

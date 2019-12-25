@@ -20,11 +20,10 @@
     <div id="chart"></div>
     <div id="result" style="display: none"></div>
 </div>
-<audio id="abc" src="abc.mp3" controls="controls"></audio>
+
+<iframe id="abcFrame" allow="autoplay" style="display:none" src=""></iframe>
 <input id="debugBtn" type="button" value="开始测试" onclick="canDebug()">
 <div id="show"></div>
-<!--<input id="playabc" type="button" value="播放" onclick="abc.play()">-->
-
 <script src="js/main.js"></script>
 <script src="js/ws.js"></script>
 <script src="js/kline.js"></script>
@@ -48,13 +47,12 @@
 
     function canDebug() {
         debugEnable = !debugEnable;
-        var value = debugEnable?"停止测试":"开始测试";
+        var value = debugEnable ? "停止测试" : "开始测试";
         $("#debugBtn").val(value);
     }
 
 
 </script>
-
 
 </body>
 </html>
