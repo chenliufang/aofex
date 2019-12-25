@@ -7,38 +7,45 @@
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <title>AOFEX_NSO</title>
-    <link rel="stylesheet" href="css/mian.css"/>
+    <link rel="stylesheet" href="css/table.css"/>
+
     <script
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
             crossorigin="anonymous"></script>
-    <script src="https://www.echartsjs.com/examples/vendors/echarts/echarts.min.js"></script>
+    <script src="js/db/db.js"></script>
+    <script src="js/db/order.js"></script>
+    <script>
+        function saveOrder() {
+            var timeStr = $("#timeStr").val();
+            ORDER.save(timeStr);
+            ORDER.queryAll(function (result) {
+                $("#content").html(resultAsTable(result));
+            });
+        }
 
+        var audio = new Audio("abc.mp3");
+        function play() {
+            try{
+                audio.play();
+            }catch (e){
+                console.log("播放音乐失败："+ JSON.stringify(e));
+            }
+        }
+
+
+    </script>
 </head>
 <body>
-<div id="kLine">
-    <div id="chart"></div>
-    <div id="result"></div>
-</div>
-<div id="show"></div>
+时间：<input type="text" id="timeStr">
+<input type="button" value="新增" onclick="saveOrder()">
+<input type="button" value="吹号" onclick="play()">
+<table>
+    <tbody id="content">
 
-<script src="js/main.js"></script>
-<script src="js/ws.js"></script>
-<script src="js/kline.js"></script>
-<script src="js/result.js"></script>
-<script src="js/biz.js"></script>
+    </tbody>
 
-<script type="text/javascript">
-    createWs();
-    setInterval(function () {
-        try {
-            upgrade();
-        } catch (e) {
-            addMsg(JSON.stringify(e))
-        }
-    }, 10000);
-</script>
-
+</table>
 
 </body>
 </html>
