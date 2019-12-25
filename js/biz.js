@@ -8,7 +8,7 @@ function upgrade() {
             req(klineUrl150);
             viewResult();
         } catch (e) {
-            addMsg("获取数据失败："+ JSON.stringify(e));
+            addMsg("获取数据失败：" + JSON.stringify(e));
         }
 
     }
@@ -17,7 +17,7 @@ function upgrade() {
         try {
             suggest();
         } catch (e) {
-            addMsg("吹号失败："+ JSON.stringify(e));
+            addMsg("吹号失败：" + JSON.stringify(e));
         }
     }
 }
