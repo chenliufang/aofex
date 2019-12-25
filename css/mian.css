@@ -1,18 +1,31 @@
 
-body {
+.body {
     width: 100%;
     background-color: darkgrey;
     min-width: 1200px;
-    margin: 45px 20px;
 }
+
+.bodyMobile{
+    width: 100%;
+    background-color: darkgrey;
+    margin: 45px 20px;
+    max-width: 500px;
+ }
 
 #kLine {
     witdh: 100%;
 }
 
-#chart {
+.chart {
     width: 700px;
     height: 450px;
+    margin: 10px;
+    float: left;
+}
+
+.chartMobile{
+    width: 420px;
+    height: 320px;
     margin: 10px;
     float: left;
 }

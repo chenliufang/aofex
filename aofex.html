@@ -15,10 +15,10 @@
     <script src="https://www.echartsjs.com/examples/vendors/echarts/echarts.min.js"></script>
 
 </head>
-<body>
+<body class="bodyMobile">
 <div id="kLine">
-    <div id="chart"></div>
-    <div id="result"></div>
+    <div id="chart" class="chartMobile"></div>
+    <div id="result" style="display: none"></div>
 </div>
 <div id="show"></div>
 
@@ -36,6 +36,7 @@
         } catch (e) {
             addMsg(JSON.stringify(e))
         }
+        play();
     }, 10000);
 </script>
 
