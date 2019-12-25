@@ -21,6 +21,7 @@
     <div id="result" style="display: none"></div>
 </div>
 <audio id="abc" src="abc.mp3" controls="controls"></audio>
+<input id="debugBtn" type="button" value="开始测试" onclick="canDebug()">
 <div id="show"></div>
 <!--<input id="playabc" type="button" value="播放" onclick="abc.play()">-->
 
@@ -31,14 +32,26 @@
 <script src="js/biz.js"></script>
 
 <script type="text/javascript">
+
+    var debugEnable = false;
     createWs();
     setInterval(function () {
         try {
             upgrade();
+            if (debugEnable) {
+                play();
+            }
         } catch (e) {
             addMsg(JSON.stringify(e))
         }
     }, 10000);
+
+    function canDebug() {
+        debugEnable = !debugEnable;
+        var value = debugEnable?"停止测试":"开始测试";
+        $("#debugBtn").val(value);
+    }
+
 
 </script>
 
